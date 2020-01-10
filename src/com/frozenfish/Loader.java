@@ -44,6 +44,7 @@ public class Loader implements Runnable {
         DataStrings data;
         while ((data = getDataFromQueue()) != null) {
             try {
+                System.out.println("Загружается файл: "+ data.urlString);
                 URL url = new URL(data.urlString);
                 URLConnection connection = url.openConnection();
                 fileSize = connection.getContentLength();
